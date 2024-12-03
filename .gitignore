@@ -1,0 +1,28 @@
+# 配置文件
+config/config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 环境
+.env
+.venv
+env/
+venv/
+python/
+
+# IDE
+.idea/
+.vscode/
+
+# 日志
+*.log
+logs/
+
+# 模型文件
+resources/*.pt
+
+# Docker
+.docker/

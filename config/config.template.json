@@ -1,0 +1,38 @@
+{
+    "username": "",
+    "password": "",
+    "modules": {
+        "POST": {
+            "enabled": true,
+            "limit": 2,
+            "interval": 60
+        },
+        "COMMENT": {
+            "enabled": true,
+            "limit": 2,
+            "interval": 60
+        },
+        "LIKE": {
+            "enabled": true,
+            "limit": 3,
+            "interval": 15
+        }
+    },
+    "delays": {
+        "PAGE_LOAD": 2,
+        "INPUT": 0.5,
+        "CHECK": 1,
+        "RETRY": 5
+    },
+    "browser": {
+        "headless": true,
+        "window_size": {
+            "width": 1920,
+            "height": 1080
+        }
+    },
+    "model": {
+        "path": "resources/best_3.pt",
+        "class_names_path": "src/config/class_names.py"
+    }
+}
