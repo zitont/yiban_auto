@@ -1,6 +1,8 @@
 import json
 import os
 import logging
+import time
+import msvcrt
 
 # 配置日志
 logging.basicConfig(
@@ -50,12 +52,46 @@ class ConfigManager:
         except Exception as e:
             logger.error(f"保存配置失败: {e}")
 
+    def wait_for_input(self, prompt, timeout=8, default=''):
+        """等待用户输入，超时返回默认值"""
+        print(prompt, end='', flush=True)
+        start_time = time.time()
+        input_chars = []
+        
+        while True:
+            if msvcrt.kbhit():
+                char = msvcrt.getwche()
+                if char == '\r':  # Enter键
+                    print()  # 换行
+                    return ''.join(input_chars) or default
+                elif char == '\b':  # 退格键
+                    if input_chars:
+                        input_chars.pop()
+                        # 清除上一个字符
+                        print('\b \b', end='', flush=True)
+                else:
+                    input_chars.append(char)
+            
+            elapsed = time.time() - start_time
+            remaining = int(timeout - elapsed)
+            
+            # 每秒更新倒计时
+            if elapsed <= timeout:
+                print(f'\r{prompt}{"".join(input_chars)} ({remaining}秒后使用默认值)', end='', flush=True)
+            
+            if elapsed > timeout:
+                print(f'\n已超时，使用默认值: {default}')
+                return default
+            
+            time.sleep(0.1)
+
     def check_credentials(self):
         """检查并更新账号信息"""
         if self.config.get('username') and self.config.get('password'):
             print(f"\n当前账号: {self.config['username']}")
-            change = input("是否修改账号信息？(y/N): ").strip().lower()
-            if change == 'y':
+            print(f"8秒内未选择将保持当前账号")
+            change = self.wait_for_input("是否修改账号信息？(y/N): ", timeout=8, default='n')
+            if change.lower() == 'y':
                 self.config['username'] = ""
                 self.config['password'] = ""
         
@@ -106,7 +142,7 @@ class ConfigManager:
                 
                 # 是否启用
                 enabled_input = input(f"是否启用{module_name}？(y/N，当前{'启用' if current['enabled'] else '禁用'}，直接回车保持当前设置): ").strip().lower()
-                enabled = current['enabled']  # ��认保持当前值
+                enabled = current['enabled']  # 认保持当前值
                 if enabled_input:
                     enabled = enabled_input == 'y'
                 
