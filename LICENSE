@@ -1,16 +1,36 @@
-MIT License
+MIT License with Restrictions
 
 Copyright (c) 2024 ZiTonT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+in the Software ONLY for educational and research purposes, subject to the 
+following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. The Software may ONLY be used for:
+   - Educational purposes
+   - Research and study
+   - Personal skill development
+   - Non-commercial testing
+
+2. The Software may NOT be used for:
+   - Any commercial purposes
+   - Any illegal activities
+   - Any activities that violate platform terms of service
+   - Any activities that may harm others
+   - Mass automation or bulk operations
+   - Data scraping or mining
+   - Unauthorized access
+
+3. The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+4. Users must:
+   - Respect rate limits and platform guidelines
+   - Protect user privacy and data
+   - Use the software responsibly
+   - Not share access credentials
+   - Not distribute modified versions for non-educational purposes
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -19,3 +39,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+By using this software, you agree to these terms and acknowledge that:
+1. This is for educational purposes only
+2. You are responsible for any consequences of use
+3. You will not use it for any harmful or illegal purposes
+4. You understand the risks involved
+5. You will comply with all applicable laws and regulations
